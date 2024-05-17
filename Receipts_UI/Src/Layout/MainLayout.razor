@@ -1,0 +1,49 @@
+﻿@inherits LayoutComponentBase
+
+<MudLayout>
+    <MudMainContent>
+        <MudContainer Class="mt-10 px-8 mb-2" MaxWidth="MaxWidth.ExtraExtraLarge">
+            <MudGrid>
+              @Body
+            </MudGrid>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+<style>
+    .mud-primary-text {
+        color: var(--mud-palette-text-primary) !important;
+    }
+
+    .mud-secondary-text {
+        color: var(--mud-palette-text-secondary) !important;
+    }
+</style>
+@code {
+    MudTheme ReceiptTheme = new MudTheme()
+        {
+            Palette = new PaletteLight()
+            {
+                Primary = Colors.Grey.Darken1,
+                Secondary = Colors.Green.Accent4,
+                AppbarBackground = Colors.Grey.Darken1,
+                TextPrimary = Colors.Grey.Darken1,
+                TextSecondary = Colors.Grey.Darken4
+            },
+            PaletteDark = new PaletteDark()
+            {
+                Primary = Colors.Blue.Lighten1
+            },
+
+            LayoutProperties = new LayoutProperties()
+            {
+                DrawerWidthLeft = "260px",
+                DrawerWidthRight = "300px"
+            }
+        };
+}
